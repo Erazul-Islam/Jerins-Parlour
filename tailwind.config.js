@@ -5,8 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {}, themes: ["light", "dark", "cupcake"],
+    extend: {},
   },
   plugins: [require("daisyui")],
+  daisyui: {
+    themes: ["valentine"], // true: all themes | false: only light + dark | array: specific themes like this ["light", "dark", "cupcake"]
+  },
 }
 
