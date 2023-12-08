@@ -1,22 +1,25 @@
-import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
+
 
 const Review = () => {
 
-    const [review, setReview] = useState({})
-    useEffect(() => {
-        fetch('http://localhost:5000/testimonials')
-            .then(res => res.json())
-            .then(data => setReview(data))
-    })
+    const axiosPublic = useAxiosPublic();
 
-    console.log(review)
+    const { data: testimonials = [] } = useQuery({
+        queryKey: ['testimonials'],
+        queryFn: async () => {
+            const res = await axiosPublic.get('/testimonials')
+            return res.data
+        }
+    })
 
     return (
         <div className="mt-16">
             <p className="text-2xl font-bold text-center text-[#1F1632]">Testimonials</p>
-            {/* <div className="grid grid-cols-1 mt-8 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 mt-8 gap-8 md:grid-cols-2 lg:grid-cols-3">
                 {
-                    review.map(single => <div key={single._id}>
+                    testimonials.map(single => <div key={single._id}>
                         <div className="flex gap-4">
                             <img src={single.image} className="w-28 h-28" alt="" />
                             <div className="lg:pt-8">
@@ -34,7 +37,7 @@ const Review = () => {
                         </div>
                     </div>)
                 }
-            </div> */}
+            </div>
         </div>
     );
 };
