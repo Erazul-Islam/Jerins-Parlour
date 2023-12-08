@@ -12,10 +12,7 @@ const Services = () => {
             .then(data => setData(data))
     })
 
-    // console.log(data)
-
-    const displayedData = data.slice(0, 3)
-    console.log(displayedData)
+    // const displayedData = data.slice(0, 3)
 
     return (
         <div>
@@ -24,7 +21,7 @@ const Services = () => {
                     Our awesome <span className="text-[#F63E7B]">services</span>
                 </p>
             </div>
-            <div className="grid grid-cols-1 lg:ml-20 mt-12 gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {/* <div className="grid grid-cols-1 lg:ml-20 mt-12 gap-4 md:grid-cols-2 lg:grid-cols-3">
                 {
                     displayedData.map(single => <div className="text-center" key={single._id}>
                         <div className="bg-[#fff] rounded-lg h-[317px] w-[370px]">
@@ -35,7 +32,7 @@ const Services = () => {
                         </div>
                     </div>)
                 }
-            </div>
+            </div> */}
             <div className="text-center mt-4">
                 <button className="btn hover:bg-pink-400 bg-[#F63E7B] text-white rounded-md">Explore More</button>
             </div>

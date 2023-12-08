@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
     return (
-        <div className="bg-[#FFF8F5]">          
+        <div className="bg-[#FFF8F5]">
             <div className="navbar bg-base-100">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -29,7 +29,11 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Login</a>
+                    <NavLink to='/login'>
+                        <div>
+                            <button className="btn hover:bg-pink-400 bg-[#F63E7B] text-white rounded-md">Login</button>
+                        </div>
+                    </NavLink>
                 </div>
             </div>
         </div>
