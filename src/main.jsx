@@ -22,6 +22,7 @@ import AddService from './Shared/AdminDashboard/AddService/AddService';
 import MakeAdmin from './Shared/AdminDashboard/MakeAdmin/MakeAdmin';
 import Manage from './Shared/AdminDashboard/Manage/Manage';
 import Admin from './Shared/Dashboard/Admin';
+import AuthProvider from './provider/AuthProvider';
 
 const queryClient = new QueryClient();
 
@@ -101,8 +102,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
-    </QueryClientProvider>
+    <AuthProvider>
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
+    </AuthProvider>
   </React.StrictMode>,
 )
