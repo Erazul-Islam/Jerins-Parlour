@@ -1,6 +1,19 @@
-import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { Link, NavLink, Navigate } from "react-router-dom";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const Navbar = () => {
+
+
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => <Navigate to='/' ></Navigate>)
+            .catch(error => console.log(error))
+    }
+
+
     return (
         <div className="bg-[#FFF8F5]">
             <div className="navbar bg-base-100">
@@ -33,11 +46,19 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <NavLink to='/login'>
-                        <div>
-                            <button className="btn hover:bg-pink-400 bg-[#F63E7B] text-white rounded-md">Login</button>
-                        </div>
-                    </NavLink>
+                    {
+                        user ? <>
+                            <div className="flex mt-32 lg:mt-2 gap-4">
+                                <p className=" lg:mt-2 lg">{user?.displayName}</p>
+                                <img className="rounded-full h-8 w-8" src={user?.photoURL} alt="" />
+                            </div>
+                            <button onClick={handleLogOut} className="btn hover:bg-pink-400 bg-[#F63E7B] text-white rounded-md">Sign Out</button>
+                        </>
+                            :
+                            <Link to="/login">
+                                <button className="btn hover:bg-pink-400 bg-[#F63E7B] text-white rounded-md">Login</button>
+                            </Link>
+                    }
                 </div>
             </div>
         </div>
