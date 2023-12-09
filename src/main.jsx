@@ -21,7 +21,6 @@ import OrderList from './Shared/AdminDashboard/OrderList/OrderList';
 import AddService from './Shared/AdminDashboard/AddService/AddService';
 import MakeAdmin from './Shared/AdminDashboard/MakeAdmin/MakeAdmin';
 import Manage from './Shared/AdminDashboard/Manage/Manage';
-import Admin from './Shared/Dashboard/Admin';
 import AuthProvider from './provider/AuthProvider';
 
 const queryClient = new QueryClient();
@@ -72,14 +71,7 @@ const router = createBrowserRouter([
       {
         path: 'client',
         element: <ClientReview></ClientReview>
-      }
-
-    ]
-  },
-  {
-    path: 'admin',
-    element: <Admin></Admin>,
-    children: [
+      },
       {
         path: 'add',
         element: <AddService></AddService>
@@ -96,8 +88,9 @@ const router = createBrowserRouter([
         path: 'order',
         element: <OrderList></OrderList>
       }
+
     ]
-  }
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

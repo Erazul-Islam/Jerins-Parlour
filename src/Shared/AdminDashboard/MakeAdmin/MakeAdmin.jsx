@@ -21,7 +21,7 @@ const MakeAdmin = () => {
             .then(res => {
                 console.log(res.data)
                 if (res.data.modifiedCount > 0) {
-                    refetch
+                    refetch()
                     Swal.fire({
                         title: "Good job!",
                         text: "You clicked the button!",
