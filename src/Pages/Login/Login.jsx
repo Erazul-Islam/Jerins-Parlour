@@ -6,7 +6,7 @@ import axios from "axios";
 
 const Login = () => {
 
-    const { googleSignIn } = useContext(AuthContext);
+    const { googleSignIn, signInUser } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const handleGoogleLogin = () => {
@@ -29,10 +29,44 @@ const Login = () => {
             })
     }
 
+    const handleLogin = e => {
+        e.preventDefault();
+        const email = e.target.email.value;
+        const password = e.target.password.value
+        console.log(email, password)
+
+        signInUser(email, password)
+            .then(res => {
+                console.log(res.user)
+                e.target.reset()
+                navigate('/')
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
+
 
     return (
         <div>
             <div className="mt-40 lg:ml-[500px]">
+                <form onSubmit={handleLogin}>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Email</span>
+                        </label>
+                        <input type="email" placeholder="email" name="email" className="input w-56 rounded-lg input-bordered" required />
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Password</span>
+                        </label>
+                        <input type="password" name="password" placeholder="password" className="input w-56 rounded-lg input-bordered" required />
+                    </div>
+                    <div className="form-control gap-4 mt-6">
+                    <button className="btn hover:bg-pink-400 w-56 rounded-lg bg-[#F63E7B] text-white">Login</button>
+                    </div>
+                </form>
                 <p className="text-3xl ml-44 font-extrabold text-[#000]">Login With</p>
                 <div onClick={handleGoogleLogin} className="flex w-[500px] h-8 gap-10 rounded-full pl-4 pb-0 bg-[#fff] text-2xl mt-14 border-solid border-spacing-4 border-[#C7C7C7]">
                     <div className="pt-1">
