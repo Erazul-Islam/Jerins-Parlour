@@ -21,7 +21,7 @@ const Review = () => {
                 {
                     testimonials.map(single => <div key={single._id}>
                         <div className="flex gap-4">
-                            <img src={single.image} className="w-28 h-28" alt="" />
+                            <img src={single.image} className="w-28 rounded-full h-28" alt="" />
                             <div className="lg:pt-8">
                                 <p>{single.name}</p>
                                 <p>{single.role}</p>
