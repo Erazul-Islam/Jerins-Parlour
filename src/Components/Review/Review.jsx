@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
-
+import { fadeIn } from '../../../src/variant'
+import { motion } from "framer-motion"
 
 const Review = () => {
 
@@ -15,7 +16,12 @@ const Review = () => {
     })
 
     return (
-        <div className="mt-16">
+        < motion.div className="mt-16"
+            variants={fadeIn('right', 0.2)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.7 }}
+        >
             <p className="text-2xl font-bold text-center text-[#1F1632]">Testimonials</p>
             <div className="grid grid-cols-1 mt-8 gap-8 md:grid-cols-2 lg:grid-cols-3">
                 {
@@ -38,7 +44,7 @@ const Review = () => {
                     </div>)
                 }
             </div>
-        </div>
+        </ motion.div>
     );
 };
 

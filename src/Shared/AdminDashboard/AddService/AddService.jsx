@@ -1,23 +1,8 @@
 import Swal from "sweetalert2";
-import useAxiosPublic from "../../../Hooks/useAxiosPublic";
-// import axios from "axios";
 
-const imageHosting = import.meta.env.VITE_IMAGE;
-const image_hosting_api = `https://api.imgbb.com/1/upload?key=${imageHosting}`
 
 const AddService = () => {
-    const axiosPublic = useAxiosPublic();
-
-    const onsubmit = x => {
-        const imageFile = { image: x.image[0] }
-        const res = axiosPublic.post(image_hosting_api, imageFile, {
-            headers: {
-                'content-type': 'multipart/form-data'
-            }
-        })
-        console.log(res.data)
-    }
-
+   
     const handleAdd = e => {
 
         e.preventDefault()
@@ -27,9 +12,9 @@ const AddService = () => {
         const service_name = e.target.name.value;
         const description = e.target.description.value;
         const price = e.target.price.value;
-        // const image = res.data.data.display_url;
+        const image = e.target.image.value;
 
-        const info = { service_name, description, price }
+        const info = { service_name, description, price,image }
 
 
         fetch('http://localhost:5000/services', {
@@ -65,7 +50,7 @@ const AddService = () => {
                             </div>
                             <div className="pr-12">
                                 <p className="font-bold">Image</p>
-                                <input name="image" className="bg-[#F63E7B]" placeholder="upload Image" type="file" />
+                                <input name="image" className="input w-[400px] rounded bg-[#fff] input-secondary" placeholder="Image Link" type="text" />
                             </div>
                         </div>
                         <div className="mt-4">
@@ -80,13 +65,6 @@ const AddService = () => {
                             <button className="btn hover:bg-pink-400 bg-[#F63E7B] text-white rounded-md">Submit</button>
                         </div>
                     </div>
-                </form>
-                <form onSubmit={onsubmit}>
-                    <div className="pr-12">
-                        <p className="font-bold">Image</p>
-                        <input name="image" className="bg-[#F63E7B]" placeholder="upload Image" type="file" />
-                    </div>
-                    <button className="btn hover:bg-pink-400 bg-[#F63E7B] text-white rounded-md">Submist</button>
                 </form>
             </div>
         </div>

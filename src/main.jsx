@@ -24,6 +24,7 @@ import Manage from './Shared/AdminDashboard/Manage/Manage';
 import AuthProvider from './provider/AuthProvider';
 import Explore from './Pages/Explore/Explore';
 import Booking from './Pages/Explore/Booking';
+import Exclusive from './Exclusive';
 
 const queryClient = new QueryClient();
 
@@ -63,6 +64,11 @@ const router = createBrowserRouter([
       {
         path: 'booking/:_id',
         element: <Booking></Booking>,
+        loader: () => fetch('http://localhost:5000/services')
+      },
+      {
+        path: 'motion',
+        element: <Exclusive></Exclusive>,
         loader: () => fetch('http://localhost:5000/services')
       }
     ]

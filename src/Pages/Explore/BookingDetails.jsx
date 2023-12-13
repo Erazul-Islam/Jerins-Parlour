@@ -10,6 +10,7 @@ const BookingDetails = ({data}) => {
 
     const {user} = useContext(AuthContext);
 
+    
     const handleAdd = () => {
         if(user && user.email){
             const cartItem = {

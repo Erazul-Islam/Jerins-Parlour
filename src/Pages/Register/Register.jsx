@@ -14,17 +14,16 @@ const Register = () => {
     const handleSubmit = e => {
         e.preventDefault();
 
-        const name = e.target.name.value;
+        const displayName = e.target.name.value;
         const last =e.target.last.value;
         const email = e.target.email.value;
         const pass = e.target.pass.value;
-        // const confirm = e.target.confirm.value;
 
-        createUser(email,pass)
+        createUser(email,pass,displayName)
         .then(result => {
             const loogedUser = result.user;
             const email = loogedUser.email
-            const userInfo = {email,name,last}
+            const userInfo = {email,displayName,last}
             axios.post('http://localhost:5000/users',userInfo)
             .then(res => {
                 console.log(res.data)

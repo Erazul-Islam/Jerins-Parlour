@@ -13,6 +13,7 @@ const Navbar = () => {
             .catch(error => console.log(error))
     }
 
+    console.log(user)
 
     return (
         <div className="bg-[#FFF8F5]">
@@ -29,6 +30,7 @@ const Navbar = () => {
                                 <li> <NavLink to='/team'>Our Team</NavLink> </li>
                                 <li> <NavLink to='/contact'>Contact Us</NavLink> </li>
                                 <li> <NavLink to='/dashboard'>Dashboard</NavLink> </li>
+                                <li> <NavLink to='/motion'>Exclusive</NavLink> </li>
                             </ul>
                         </ul>
                     </div>
@@ -41,6 +43,7 @@ const Navbar = () => {
                         <li> <NavLink to='/team'>Our Team</NavLink> </li>
                         <li> <NavLink to='/contact'>Contact Us</NavLink> </li>
                         <li> <NavLink to='/dashboard'>Dashboard</NavLink> </li>
+                        <li> <NavLink to='/motion'>Exclusive</NavLink> </li>
                     </ul>
                 </div>
                 <div className="navbar-end">
