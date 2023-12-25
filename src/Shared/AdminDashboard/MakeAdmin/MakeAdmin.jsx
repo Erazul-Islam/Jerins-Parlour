@@ -34,7 +34,7 @@ const MakeAdmin = () => {
 
     return (
         <div>
-            <div className="mt-28 w-[1000px] h-[500px] bg-[#F4F7FC]">
+            <div className="mt-28 lg:w-[1000px] lg:h-[500px] bg-[#F4F7FC]">
                 <div className="bg-[#fff] overflow-x-auto">
                     <table className="table">
                         <thead>

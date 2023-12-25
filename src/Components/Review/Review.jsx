@@ -23,7 +23,7 @@ const Review = () => {
             viewport={{ once: false, amount: 0.7 }}
         >
             <p className="text-2xl font-bold text-center text-[#1F1632]">Testimonials</p>
-            <div className="grid grid-cols-1 mt-8 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 ml-16 mr-8 mt-8 gap-8 md:grid-cols-2 lg:grid-cols-3">
                 {
                     testimonials.map(single => <div key={single._id}>
                         <div className="flex gap-4">

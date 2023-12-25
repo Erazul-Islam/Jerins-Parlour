@@ -6,7 +6,7 @@ const BookingList = () => {
 
     return (
         <div>
-            <div className="mt-28 w-[1000px] grid grid-cols-2 pl-8 pt-8 pb-8 h-[500px] bg-[#F4F7FC]">
+            <div className="mt-28 w-[1000px] grid md:grid-cols-2 grid-cols-1 gap-4 pl-8 pt-8 pb-8 h-[500px] bg-[#F4F7FC]">
                 {
                     cart.map(one => <div key={one._id} className="w-[450px] h-[250px] bg-[#FFF]">
                         <p className="flex justify-between pl-8 pr-8 pt-8">

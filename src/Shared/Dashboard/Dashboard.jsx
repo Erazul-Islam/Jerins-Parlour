@@ -10,7 +10,7 @@ const Dashboard = () => {
     const [isAdmin] = useAdmin();
 
     return (
-        <div className="flex">
+        <div className="lg:flex">
             {isAdmin ? <div className=" ml-28 mt-10">
                     <img src="https://i.ibb.co/d7xKMwv/Group-33092.png" alt="" />
                     <div className="flex mt-8 text-[#F63E7B] gap-4">
@@ -73,7 +73,7 @@ const Dashboard = () => {
             </div> 
             
             }
-            <div className="ml-72">
+            <div className="lg:ml-72">
                 <Outlet></Outlet>
             </div>
         </div>

@@ -49,30 +49,30 @@ const Login = () => {
 
     return (
         <div>
-            <div className="mt-40 lg:ml-[500px]">
+            <div className="lg:mt-40 mt-10 ml-28 lg:ml-[500px]">
                 <form onSubmit={handleLogin}>
-                    <div className="form-control">
+                    <div className="form-control lg:ml-16">
                         <label className="label">
                             <span className="label-text">Email</span>
                         </label>
-                        <input type="email" placeholder="email" name="email" className="input w-56 rounded-lg input-bordered" required />
+                        <input type="email" placeholder="email" name="email" className="input w-56 lg:w-96 rounded-lg input-bordered" required />
                     </div>
-                    <div className="form-control">
+                    <div className="form-control lg:ml-16 ">
                         <label className="label">
                             <span className="label-text">Password</span>
                         </label>
-                        <input type="password" name="password" placeholder="password" className="input w-56 rounded-lg input-bordered" required />
+                        <input type="password" name="password" placeholder="password" className="input w-56 lg:w-96 rounded-lg input-bordered" required />
                     </div>
-                    <div className="form-control gap-4 mt-6">
-                    <button className="btn hover:bg-pink-400 w-56 rounded-lg bg-[#F63E7B] text-white">Login</button>
+                    <div className="form-control lg:ml-16 gap-4 mt-6">
+                        <button className="btn hover:bg-pink-400 w-56 lg:w-96 rounded-lg bg-[#F63E7B] text-white">Login</button>
                     </div>
                 </form>
-                <p className="text-3xl ml-44 font-extrabold text-[#000]">Login With</p>
-                <div onClick={handleGoogleLogin} className="flex w-[500px] h-8 gap-10 rounded-full pl-4 pb-0 bg-[#fff] text-2xl mt-14 border-solid border-spacing-4 border-[#C7C7C7]">
+                <p className="text-3xl mt-4 lg:ml-44 font-extrabold text-[#000]">Login With</p>
+                <div onClick={handleGoogleLogin} className="flex w-[250px] lg:w-[500px] h-8 gap-1 lg:gap-10 rounded-full pl-4 pb-0 bg-[#fff] lg:text-2xl text-xl mt-6 lg:mt-14 border-solid border-spacing-4 border-[#C7C7C7]">
                     <div className="pt-1">
                         <FaGoogle></FaGoogle>
                     </div>
-                    <p className="pl-20">Continue with Google</p>
+                    <p className="lg:pl-20">Continue with Google</p>
                 </div>
                 <p className="mt-8 lg:ml-28">Do not have an account? <NavLink to='/register' ><span className="text-[#F63E7B]"><u>Create an account</u></span></NavLink> </p>
             </div>

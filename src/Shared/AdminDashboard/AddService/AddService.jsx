@@ -43,7 +43,7 @@ const AddService = () => {
             <div className="mt-28 w-[1000px] h-[500px] bg-[#F4F7FC]">
                 <form onSubmit={handleAdd}>
                     <div className="pt-8 pl-8">
-                        <div className="flex gap-9">
+                        <div className="lg:flex gap-9">
                             <div>
                                 <p className="font-bold">Service Title</p>
                                 <input name="name" type="text" placeholder="Service Name" className="input w-[400px] rounded bg-[#fff] input-secondary" />
@@ -61,7 +61,7 @@ const AddService = () => {
                             <p className="font-bold mt-4">Description</p>
                             <textarea name="description" className="textarea rounded textarea-success w-[400px]" placeholder="Enter Description"></textarea>
                         </div>
-                        <div className="mt-5 text-right mr-60 pb-8">
+                        <div className="mt-5 lg:text-right lg:mr-60 pb-8">
                             <button className="btn hover:bg-pink-400 bg-[#F63E7B] text-white rounded-md">Submit</button>
                         </div>
                     </div>

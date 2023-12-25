@@ -17,7 +17,7 @@ const OrderList = () => {
 
     return (
         <div>
-            <div className="mt-28 w-[1000px] h-[500px] bg-[#F4F7FC]">
+            <div className="mt-28 lg:w-[1000px] lg:h-[500px] bg-[#F4F7FC]">
                 <div className="pt-8 pl-8 pr-8 pb-8">
                     <table className="table bg-[#fff]">
                         <thead>

@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <div>
             <div className="bg-[#F63E7B] text-white">
-                <div className="pl-44 flex pb-14 pt-10 gap-24">
+                <div className="lg:pl-44  flex pb-14 pt-10 gap-2 pr-2 pl-2 lg:gap-24">
                     <div className="flex gap-2">
                         <div className="text-3xl">
                             <IoLocationSharp />

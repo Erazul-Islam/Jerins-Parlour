@@ -33,7 +33,7 @@ const Services = () => {
                     Our awesome <span className="text-[#F63E7B]">services</span>
                 </p>
             </div>
-            <div className="grid grid-cols-1 lg:ml-20 mt-12 gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 ml-24 lg:ml-20 mt-12 gap-4 md:grid-cols-2 lg:grid-cols-3">
                 {
                     displayedData.map(single => < motion.div layoutId={single._id}
                         whileHover={{ scale: 1.2 }}

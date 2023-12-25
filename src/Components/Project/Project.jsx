@@ -34,7 +34,7 @@ const Project = () => {
                 <p className="text-3xl font-extrabold text-center text-[#2D2D2D]">Let us handle your <br />
                     project, professionally.</p>
                 <form onSubmit={handleAdd} >
-                    <div className="pt-8 lg:pl-[450px]">
+                    <div className="pt-8 pl-4 pr-4 lg:pr-0 lg:pl-[450px]">
                         <div className="flex gap-4">
                             <input name="fname" type="text" placeholder="Full Name" className="input rounded bg-[#fff] input-secondary w-full max-w-xs" />
                             <input name="lname" type="text" placeholder="Last Name" className="input rounded bg-[#fff] input-secondary w-full max-w-xs" />
@@ -44,7 +44,7 @@ const Project = () => {
                             <input name="phone" type="text" placeholder="Phone Number" className="input rounded bg-[#fff] input-secondary w-full max-w-xs" />
                         </div>
                         <div className="mt-4">
-                            <textarea name="message" className="textarea rounded textarea-success w-[660px]" placeholder="Your Message"></textarea>
+                            <textarea name="message" className="textarea rounded textarea-success w-[500px] lg:w-[660px]" placeholder="Your Message"></textarea>
                         </div>
                         <div className="lg:ml-64 mt-5 pb-8">
                             <button className="btn hover:bg-pink-400 bg-[#F63E7B] text-white rounded-md">Send Message</button>
